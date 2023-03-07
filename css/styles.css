@@ -736,7 +736,7 @@ position: relative;
     top: 0;
     left: 0;
     width: 100%;
-    max-height: 100%;
+    height: 100%;
     background-color: rgba(46, 47, 66, 0.4);
     display: flex;
     align-items: center;
@@ -759,8 +759,10 @@ position: relative;
     width: 100%;
     height: 100%;
     max-width: 408px;
-    max-height: 584px;
+    height: 584px;
+    padding: 72px 24px 24px;
     background-color: #FCFCFC;
+    border-radius: 4px;
     box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.2),
         0 1px 3px 0 rgba(0, 0, 0, 0.12),
         0 1px 1px 0 rgba(0, 0, 0, 0.14);
@@ -786,14 +788,7 @@ position: relative;
     fill: var(--color-page);
 }
 
-.modal-contacts {
-    position: relative;
-    margin-left: 24px;
-    margin-right: 24px;
-}
-
 .modal-title {
-    margin-top: 72px;
     margin-bottom: 16px;
     text-align: center;
     font-size: 16px;
@@ -801,15 +796,6 @@ position: relative;
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--color-page-text);
-}
-
-.modal-section {
-    position: relative;
-}
-
-.modal-section-email-comment {
-    margin-top: 8px;
-    position: relative;
 }
 
 .modal-input {
@@ -821,12 +807,28 @@ position: relative;
     outline-color: var(--color-logo);
 }
 
-.modal-input:focus,
-.modal-input:hover {
-    cursor: pointer;
+.input-svg {
+    position: relative;
+    transition-property: border-radius, border, fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-svg:focus,
+.input-svg:hover {
     border-radius: 4px;
     border: 1px solid var(--color-logo);
+}
+
+.input-svg:focus .modal-icon,
+.input-svg:hover .modal-icon {
     fill: var(--color-logo);
+}
+
+.comment:focus,
+.comment:hover {
+    border-radius: 4px;
+    border: 1px solid var(--color-logo);
 }
 
 .comment {
@@ -839,42 +841,38 @@ position: relative;
     letter-spacing: 0.04em;
     line-height: 1.17;
     color: rgba(117, 117, 117, 0.5);
+    transition-property: border-radius, border;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-icon {
     position: absolute;
-    left: 0;
+    left: 19px;
     top: 50%;
     transform: translateY(-50%);
-    margin-left: 19px;
     fill: var(--color-page-text);
-    margin-top: 8px;
-    margin-bottom: 8px;
-}
-
-.modal-icon:hover,
-.modal-icon:focus {
-    cursor: pointer;
-    fill: var(--color-logo);
-}
-
-.person {
-    margin-top: 11px;
-    margin-bottom: 11px;
 }
 
 .modal-label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4px;
+    margin-top: 8px;
     font-size: 12px;
     font-weight: 400;
     letter-spacing: 0.04em;
     line-height: 1.17;
     color: var(--color-svg-logo);
-    margin-bottom: 4px;
+}
+
+.checkbox-section {
+    position: relative;
+    padding-left: 24px;
 }
 
 .checkbox-text {
     margin-top: 16px;
-    margin-left: 24px;
     width: 100%;
     display: flex;
     font-size: 12px;
@@ -886,33 +884,30 @@ position: relative;
 
 .checkbox-text a {
     color: var(--color-logo);
-    margin-left: 2px;
-}
-
-.section-general-button.footer {
-    margin-top: 24px;
-    margin-left: 119px;
-    margin-bottom: 24px;
-}
-
-.checkbox-section {
-    position: relative;
+    margin-left: 4px;
 }
 
 .span-check {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
     position: absolute;
+    margin-left: -24px;
+    border: 1px solid var(--color-page-text);
     top: 50%;
     transform: translateY(-50%);
     overflow: hidden;
-    width: 16px;
-    height: 16px;
     color: #FCFCFC;
-    border-radius: 4px;
-    border: 1.25px solid #2E2F42;
+    border-radius: 2px;
 }
 
 .checkbox:checked + .span-check {
-    background-image: url('../images/icon.svg#icon-Vector');
+    background-image: url('../images/Vector.svg');
+    background-color: var(--color-button-portfolio);
+    background-origin: border-box;
+    border: 1px solid var(--color-button-portfolio);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
 }
 
 .checkbox {
@@ -920,4 +915,28 @@ position: relative;
     opacity: 0;
     position: absolute;
     appearance: none;
+}
+
+.section-button-footer {
+    display: block;
+    text-align: center;
+    margin-top: 24px;
+}
+
+.button-footer {
+    padding: 16px 32px 16px 32px;
+    height: 56px;
+    width: 169px;
+    background-color: var(--color-logo);
+    color: var(--color-page);
+    border-radius: 4px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15),
+    0 4px 4px 0 rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    cursor: pointer;
+    letter-spacing: 0.04em;
 }
