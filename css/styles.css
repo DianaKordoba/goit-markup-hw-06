@@ -452,11 +452,11 @@ position: relative;
 }
 
 .footer-link-logo {
-    padding-right: 120px;
+    margin-right: 120px;
 }
 
 .footer-list-icon {
-    padding-right: 80px;
+    margin-right: 80px;
 }
 
 .footer-logo {
@@ -805,24 +805,25 @@ position: relative;
     border-radius: 4px;
     border: 1px solid rgba(33, 33, 33, 0.2);
     outline-color: var(--color-logo);
-}
-
-.input-svg {
-    position: relative;
     transition-property: border-radius, border, fill;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.input-svg:focus,
-.input-svg:hover {
+.input-svg {
+    position: relative;
+}
+
+.modal-input:hover,
+.modal-input:focus {
     border-radius: 4px;
     border: 1px solid var(--color-logo);
 }
 
-.input-svg:focus .modal-icon,
-.input-svg:hover .modal-icon {
+.modal-input:focus + .modal-icon,
+.modal-input:hover + .modal-icon {
     fill: var(--color-logo);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .comment:focus,
@@ -866,13 +867,17 @@ position: relative;
     color: var(--color-svg-logo);
 }
 
+.name {
+    margin-top: 0;
+}
+
 .checkbox-section {
     position: relative;
     padding-left: 24px;
 }
 
 .checkbox-text {
-    margin-top: 16px;
+    margin-top: 13px;
     width: 100%;
     display: flex;
     font-size: 12px;
@@ -939,4 +944,12 @@ position: relative;
     line-height: 1.5;
     cursor: pointer;
     letter-spacing: 0.04em;
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-footer:focus,
+.button-footer:hover {
+    background-color: var(--color-button-portfolio);
 }
